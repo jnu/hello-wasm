@@ -1,0 +1,10 @@
+[package]
+name = "hello-wasm"
+version = "0.1.0"
+authors = ["Joe Nudell <joen@dropbox.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+path = "rust/src/lib.rs"
+
+[dependencies]

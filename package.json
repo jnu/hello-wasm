@@ -1,0 +1,22 @@
+{
+  "name": "hello-wasm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf site ; mkdir -p site && cargo wasm build && $(npm bin)/webpack",
+    "watch": "webpack-dev-server"
+  },
+  "author": "Joe Nudell <joenudell@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/webassembly-js-api": "0.0.1",
+    "copy-webpack-plugin": "^4.5.0",
+    "ts-loader": "^4.0.0",
+    "typescript": "^2.7.2",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  }
+}

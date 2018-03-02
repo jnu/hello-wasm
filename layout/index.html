@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body, *, *:before, *:after {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body, #main, #output-wrapper {
+                width: 100%;
+                height: 100%;
+            }
+            #main {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0;
+                margin: 0;
+            }
+            #output-wrapper {
+                background-color: #fafafa;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+            #output {
+                display: block;
+                padding: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <pre id="output-wrapper">
+                <code id="output"></code>
+            </pre>
+        </div>
+        <script type="text/javascript" src="/app.js"></script>
+    </body>
+</html>
