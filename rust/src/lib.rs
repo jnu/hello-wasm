@@ -1,5 +1,5 @@
 use std::os::raw::c_char;
-use std::ffi::CString;
+use std::ffi::{CString, CStr};
 
 #[no_mangle]
 pub extern "C" fn add_one(x: i32) -> i32 {
@@ -24,10 +24,8 @@ const BUF_SIZE: usize = 128;
 static mut BUF: [u8; BUF_SIZE] = [0; BUF_SIZE];
 
 #[no_mangle]
-pub extern "C" fn get_buf_addr() -> *mut u8 {
-    unsafe {
-        BUF.as_mut_ptr()
-    }
+pub extern "C" fn get_buf_addr() -> *const u8 {
+  BUF.as_ptr()
 }
 
 #[no_mangle]
@@ -44,4 +42,11 @@ pub extern "C" fn sum_buf() -> i32 {
         }
     }
     sum
+}
+
+#[no_mangle]
+pub extern "C" fn give_str(s: *const i8) -> i32 {
+    unsafe {
+        let cs = CStr::from_ptr(s);
+    }
 }
